@@ -1,0 +1,33 @@
+<html>
+<table border="2">
+    <tr>
+        <th>no</th>
+        <th>name</th>
+        <th>update</th>
+        <th>delete</th>
+        <th>delete</th>
+    </tr>
+    {% for x in data %}
+        <tr>
+        <th>
+            {{x.idno}}
+        </th>
+        <th>{{ x.name }}</th>
+        <th>
+            <form action="{% url 'updt' %}"method="post">
+                {% csrf_token %}
+            <button type="submit"name="udt"value="{{ x.idno }}" >update</button>
+            </form>
+        </th>
+        <th><form action="{% url 'delete' %}"method="post">
+                {% csrf_token %}
+            <button type="submit"name="dell"value="{{ x.idno }}" >delete</button>
+            </form></th>
+        <th><a href="{% url 'd' %}?i={{ x.idno }}">delete</a> </th>
+
+        </tr>
+
+
+    {% endfor %}
+</table>
+</html>

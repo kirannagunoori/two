@@ -1,0 +1,25 @@
+<html>
+
+<table align="center">
+    <form action="{% url 'save' %}"method="post">
+        {% csrf_token %}
+{% for x in data1 %}
+    <tr>
+        <th>
+            <input type="number"name="t1" value="{{ x.idno }}" required readonly>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <input type="text" name="t2" value="{{ x.name }}" required>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <button type="submit">save</button>
+        </th>
+    </tr>
+    {% endfor %}
+        </form>
+</table>
+</html>

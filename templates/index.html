@@ -1,0 +1,25 @@
+<html>
+
+<table align="center">
+    <form action="{% url 'save' %}"method="post">
+        {% csrf_token %}
+
+    <tr>
+        <th>
+            <input type="number"placeholder="idno"name="t1"required>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <input type="text"placeholder="name"name="t2"required>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <button type="submit">save</button>
+        </th>
+    </tr>
+        </form>
+</table>
+<h1><a href="{% url 'view' %}">view details</a></h1>
+</html>
